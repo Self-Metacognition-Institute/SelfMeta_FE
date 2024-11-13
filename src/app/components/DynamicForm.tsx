@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {IInputProps} from "@/app/components/SmInput";
 import {ICheckboxProps} from "@/app/components/SmCheckbox";
 import {IPasswordInputProps} from "@/app/components/SmPasswordInput";
-import {ButtonProps} from "@/app/components/SmButton";
+import SmButton, {ButtonProps} from "@/app/components/SmButton";
 import {ButtonType} from "antd/es/button";
 
 
@@ -15,7 +15,7 @@ type ComponentPropsMapping = {
     SmButtonProps: ButtonProps
 }
 
-interface Fields<T extends keyof ComponentPropsMapping>{
+export interface Fields<T extends keyof ComponentPropsMapping>{
     fieldKey: string
     renderComponent: React.ComponentType<ComponentPropsMapping[T]>
     componentProps: ComponentPropsMapping[T]
@@ -26,21 +26,24 @@ export interface IDynamicFormProps {
     initialData: Record<string, string>;
     wrapperClass?: string;
     submitButtonType?: ButtonType;
+    handleSubmit?: (data: Record<string, string>) => void;
 }
 
 const DynamicForm: React.FC<IDynamicFormProps> = ({
     fields,
     initialData,
     wrapperClass = "",
+    handleSubmit = () => {}
 }) => {
     const [formState, setFormState] = useState({...initialData});
 
     const handleChange:(key: string, value: any) => void = (key: string, value: any) => {
+        console.log(key, value);
         setFormState((prev) => ({...prev, [key]: value}));
     }
 
-    const handleSubmit = () => {
-        console.log(formState)
+    const handleExpose = () => {
+        handleSubmit(formState)
     }
     return (
         <form className={`${wrapperClass}`}>
@@ -49,12 +52,13 @@ const DynamicForm: React.FC<IDynamicFormProps> = ({
                 return (
                     <Component
                         {...field.componentProps}
-                        value={formState[field.fieldKey as string]}
+                        value={formState[field.fieldKey]}
                         key={i}
-                        onChange={() => handleChange(field.fieldKey, field.componentProps.value)}
+                        onChange={(value: unknown) => handleChange(field.fieldKey, value)}
                     />
                 )
             })}
+            <SmButton text={"Gönder"} type={"primary"} onClick={handleExpose}/>
         </form>
     )
 }

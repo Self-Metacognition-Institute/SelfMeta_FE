@@ -11,10 +11,12 @@ export interface ICheckboxProps extends CheckboxProps {
 
 const SmCheckbox: React.FC<ICheckboxProps> = ({
     text,
-    rootClass = ""
+    rootClass = "",
+    onChange = () => {}
 }) => {
+
     return(
-        <Checkbox className={rootClass}>
+        <Checkbox onChange={(e) => onChange(e.target.checked)} className={rootClass}>
             {text}
         </Checkbox>
     )
