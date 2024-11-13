@@ -102,24 +102,26 @@ const page = () => {
         }
     }
     return (
-        <div className="flex flex-col items-center gap-6">
-            <div className="flex flex-col items-center gap-5 sm:gap-3">
-                <Image src="/images/logo.svg" alt="logo" width={129} height={60} className="w-[129px] h-auto"/>
-                <h1 className="text-[20px] leading-[1.4] font-medium text-[#262626] text-center sm:text-[16px]">Self Metacognition Institute’a Hoş geldin.</h1>
-                <div className="flex">
-                    <Title level={5} className="!font-normal mr-1">Seçtiğiniz paket:</Title>
-                    <Link href="#" underline className="text-[16px] leading-normal [&_:not(:hover)]:text-[#0050B3]">
-                        Kurumsal
-                    </Link>
+        <div className="w-full max-w-[368px] mx-auto">
+            <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col items-center gap-5 sm:gap-3">
+                    <Image src="/images/logo.svg" alt="logo" width={129} height={60} className="w-[129px] h-auto"/>
+                    <h1 className="text-[20px] leading-[1.4] font-medium text-[#262626] text-center sm:text-[16px]">Self Metacognition Institute’a Hoş geldin.</h1>
+                    <div className="flex">
+                        <Title level={5} className="!font-normal mr-1">Seçtiğiniz paket:</Title>
+                        <Link href="#" underline className="text-[16px] leading-normal [&_:not(:hover)]:text-[#0050B3]">
+                            Kurumsal
+                        </Link>
+                    </div>
                 </div>
+                <DynamicForm fields={formState.fields} initialData={formState.initialData} wrapperClass="w-fuflex flex-col gap-4" />
+                <Text className="text-[12px] text-center">
+                    Halihazırda kayıtlı mısınız? &nbsp;
+                    <Link href="/auth/login" className="text-[12px]">
+                        Giriş yapın.
+                    </Link>
+                </Text>
             </div>
-            <DynamicForm fields={formState.fields} initialData={formState.initialData} wrapperClass="flex flex-col gap-4" />
-            <Text className="text-[12px] text-center">
-                Halihazırda kayıtlı mısınız? &nbsp;
-                <Link href="/auth/login" className="text-[12px]">
-                    Giriş yapın.
-                </Link>
-            </Text>
         </div>
     )
 }

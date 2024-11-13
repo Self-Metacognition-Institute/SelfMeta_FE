@@ -24,7 +24,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <ConfigProvider theme={theme}>
-                <body className={archivo.className + " w-full min-md:h-screen"}>
+                <body className={archivo.className + " w-full min-md:h-screen antialiased"}>
                     <main className="size-full flex">
                         <div className="grid grid-cols-[1.5fr_3fr] grow md:grid-cols-1">
                             <div className="md:hidden">
@@ -38,9 +38,7 @@ export default function RootLayout({
                                                 <QuestionOutlined style={{color: "white"}} />
                                             </a>
                                         </div>
-                                        <div className="max-w-[368px] mx-auto">
-                                            {children}
-                                        </div>
+                                        {children}
                                         <div className="flex items-center justify-between sm:flex-col sm:gap-3 sm:text-center">
                                             <Text className="text-[12px]">Telif Hakkı © 2024 Self Metacognition Institute. Tüm Hakları Saklıdır.</Text>
                                             <Link href="#" target="_blank">
