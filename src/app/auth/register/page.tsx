@@ -114,7 +114,7 @@ const page = () => {
                         </Link>
                     </div>
                 </div>
-                <DynamicForm fields={formState.fields} initialData={formState.initialData} wrapperClass="w-fuflex flex-col gap-4" />
+                <DynamicForm fields={formState.fields} initialData={formState.initialData} wrapperClass="w-full flex flex-col gap-4" />
                 <Text className="text-[12px] text-center">
                     Halihazırda kayıtlı mısınız? &nbsp;
                     <Link href="/auth/login" className="text-[12px]">

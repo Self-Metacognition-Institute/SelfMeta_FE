@@ -33,7 +33,7 @@ const DynamicForm: React.FC<IDynamicFormProps> = ({
     fields,
     initialData,
     wrapperClass = "",
-    handleSubmit = () => {}
+    // handleSubmit = () => {}
 }) => {
     const [formState, setFormState] = useState({...initialData});
 
@@ -42,9 +42,9 @@ const DynamicForm: React.FC<IDynamicFormProps> = ({
         setFormState((prev) => ({...prev, [key]: value}));
     }
 
-    const handleExpose = () => {
-        handleSubmit(formState)
-    }
+    // const handleExpose = () => {
+    //     handleSubmit(formState)
+    // }
     return (
         <form className={`${wrapperClass}`}>
             {fields.map((field, i) => {
@@ -58,7 +58,7 @@ const DynamicForm: React.FC<IDynamicFormProps> = ({
                     />
                 )
             })}
-            <SmButton text={"Gönder"} type={"primary"} onClick={handleExpose}/>
+            {/*<SmButton text={"Gönder"} type={"primary"} onClick={handleExpose}/>*/}
         </form>
     )
 }
