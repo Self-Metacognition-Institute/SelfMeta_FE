@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import SmButton from '../components/SmButton'
 import SmInput from "@/app/components/SmInput";
@@ -5,75 +6,75 @@ import {InfoOutlined, UserOutlined} from "@ant-design/icons";
 import SmPasswordInput from "@/app/components/SmPasswordInput";
 import SmCheckbox from "@/app/components/SmCheckbox";
 import DynamicForm from "@/app/components/DynamicForm";
+import SmOTPInput from "@/app/components/SmOTPInput";
 const page = () => {
-  const formState = {
+  const formState: unknown = {
       fields: [
           {
-              fieldKey: "test",
+              fieldKey: "name",
               renderComponent: SmInput,
               componentProps: {
                   labelClass:"text-sm text-red-500 font-semibold",
                   inputName:"test" ,
-                  label:"Basic Input(Small)",
-                  placeholder:"Placeholder işte",
+                  label:"Name",
+                  placeholder:"Name",
                   fullWidth:true,
-                  value: ""
+                  value: "",
+                  size: "large",
               }
           },
           {
-              fieldKey: "test2",
+              fieldKey: "surname",
               renderComponent: SmInput,
               componentProps: {
                   labelClass:"text-sm text-red-500 font-semibold",
-                  inputName:"test2" ,
-                  label:"Basic Input(Small)",
+                  inputName:"surname" ,
+                  label:"Surname",
                   placeholder:"Placeholder işte",
                   fullWidth:true,
-                  value: ""
+                  value: "",
+                  size: "large",
               }
           },
           {
-              fieldKey: "test3",
-              renderComponent: SmCheckbox,
-              componentProps: {
-                  text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, tempore."
-              }
-          },
-          {
-              fieldKey: "test4",
+              fieldKey: "password",
               renderComponent: SmPasswordInput,
               componentProps: {
                   labelClass:"text-sm text-red-500 font-semibold",
                   inputName:"test6",
-                  label:"Password Input",
+                  label:"Password",
                   placeholder:"Placeholder işte",
                   fullWidth: true,
-                  size:"large"
+                  size:"large",
+                  value: ""
               }
           },
           {
-              fieldKey: "test4",
-              renderComponent: SmButton,
+              fieldKey: "privacypolicy",
+              renderComponent: SmCheckbox,
               componentProps: {
-                  text: "gönder",
-                  type: "primary"
+                  text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, tempore.",
+                  checked: false
               }
           }
       ],
       initialData: {
-          test: "",
-          "test2": ""
+          name: "",
+          surname: "",
+          password: "",
+          privacypolicy: "",
       }
   }
-  return (
+  // @ts-ignore
+    return (
       <div className='flex flex-col items-center p-10'>
           <div className='w-full h-[2px] bg-slate-500 my-10'/>
           <h1 className={"text-4xl font-semibold"}>BUTTONS</h1>
           <div className='w-full h-[2px] bg-slate-500 my-10'/>
           {/*--------------------------BUTTONS START---------------------------*/}
           <div className='!flex items-center justify-between gap-3 w-1/2'>
-              <SmButton className={"test-button"} text='testttt' type='primary'/>
-              <SmButton text='Button'/>
+              <SmButton onClick={() => console.log("fucukoglu")} className={"test-button"} text='testttt' type='primary'/>
+              <SmButton onClick={() => console.log("faruk")} text='Button'/>
               <SmButton text='Button' type='dashed'/>
               <SmButton text='Button' type='text'/>
               <SmButton text='Button' type='link'/>
@@ -255,8 +256,11 @@ const page = () => {
           </div>
           {/*--------------------------CHECKBOX END---------------------------*/}
           {/*--------------------------DYNAMICFORM START----------------------*/}
-          <DynamicForm fields={formState.fields} initialData={formState.initialData} />
+          <DynamicForm fields={formState.fields} initialData={formState.initialData}/>
           {/*--------------------------DYNAMICFORM END----------------------*/}
+          {/*--------------------------OTP START----------------------*/}
+          <SmOTPInput label={"Fucukoglu"} />
+          {/*--------------------------OTP END----------------------*/}
       </div>
   )
 }
