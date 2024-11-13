@@ -38,7 +38,7 @@ const SmOTPInput: React.FC<SmOTPInputProps> = ({
     };
 
     return(
-        <div className={"w-screen flex flex-col items-start"}>
+        <div className={"flex flex-col"}>
             {withTimer && (
                 <p className={timerTextClassName}>{_timer}</p>
             )}
