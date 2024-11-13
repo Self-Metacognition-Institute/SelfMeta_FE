@@ -65,7 +65,9 @@ const page = () => {
           privacypolicy: "",
       }
   }
-  // @ts-ignore
+  const handleSubmit = (e: Record<string, string>) => {
+      console.log(e, "from parent")
+  }
     return (
       <div className='flex flex-col items-center p-10'>
           <div className='w-full h-[2px] bg-slate-500 my-10'/>
@@ -256,7 +258,7 @@ const page = () => {
           </div>
           {/*--------------------------CHECKBOX END---------------------------*/}
           {/*--------------------------DYNAMICFORM START----------------------*/}
-          <DynamicForm fields={formState.fields} initialData={formState.initialData}/>
+          <DynamicForm fields={formState.fields} initialData={formState.initialData} handleSubmit={(e: Record<string, string>) => handleSubmit(e)}/>
           {/*--------------------------DYNAMICFORM END----------------------*/}
           {/*--------------------------OTP START----------------------*/}
           <SmOTPInput label={"Fucukoglu"} />

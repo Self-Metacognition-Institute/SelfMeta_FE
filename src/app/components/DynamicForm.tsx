@@ -26,12 +26,14 @@ export interface IDynamicFormProps {
     initialData: Record<string, string>;
     wrapperClass?: string;
     submitButtonType?: ButtonType;
+    handleSubmit?: (data: Record<string, string>) => void;
 }
 
 const DynamicForm: React.FC<IDynamicFormProps> = ({
     fields,
     initialData,
     wrapperClass = "",
+    handleSubmit = () => {}
 }) => {
     const [formState, setFormState] = useState({...initialData});
 
@@ -40,8 +42,8 @@ const DynamicForm: React.FC<IDynamicFormProps> = ({
         setFormState((prev) => ({...prev, [key]: value}));
     }
 
-    const handleSubmit = () => {
-        console.log(formState);
+    const handleExpose = () => {
+        handleSubmit(formState)
     }
     return (
         <form className={`${wrapperClass}`}>
@@ -56,7 +58,7 @@ const DynamicForm: React.FC<IDynamicFormProps> = ({
                     />
                 )
             })}
-            <SmButton text={"Gönder"} type={"primary"} onClick={handleSubmit}/>
+            <SmButton text={"Gönder"} type={"primary"} onClick={handleExpose}/>
         </form>
     )
 }
