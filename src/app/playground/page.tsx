@@ -261,7 +261,7 @@ const page = () => {
           <DynamicForm fields={formState.fields} initialData={formState.initialData} handleSubmit={(e: Record<string, string>) => handleSubmit(e)}/>
           {/*--------------------------DYNAMICFORM END----------------------*/}
           {/*--------------------------OTP START----------------------*/}
-          <SmOTPInput label={"Fucukoglu"} />
+          <SmOTPInput size={"large"} time={5}/>
           {/*--------------------------OTP END----------------------*/}
       </div>
   )
