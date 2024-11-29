@@ -4,19 +4,21 @@ const theme: ThemeConfig = {
     "token": {
         "colorPrimary": "#3896bd",
         "colorInfo": "#3896bd",
-        "borderRadius": 9
+        "borderRadius": 9,
+        "fontFamily": "'__Archivo_565873', '__Archivo_Fallback_565873', 'Montserrat', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'",
     },
     "components": {
         "Button": {
             "fontWeight": 500
         },
         "Typography": {
-            "fontFamilyCode": "'Archivo', Montserrat, 'Liberation Mono', Menlo, Courier, monospace",
-            "titleMarginTop": "0.5em",
+            "fontFamilyCode": "'__Archivo_565873', '__Archivo_Fallback_565873', 'Montserrat', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'",
             "colorPrimaryBorder": "rgb(56,150,189)",
             "colorText": "rgba(0,0,0,0.85)",
             "colorTextDescription": "rgb(89,89,89)",
-            "colorTextHeading": "rgba(0,0,0,0.85)"
+            "colorTextHeading": "rgba(0,0,0,0.85)",
+            "titleMarginBottom": "0",
+            "titleMarginTop": "0"
         },
         "Breadcrumb": {
             "lastItemColor": "rgba(0,0,0,0.85)",
@@ -35,6 +37,7 @@ const theme: ThemeConfig = {
         },
         "Input": {
             "inputFontSize": 16,
+            "borderRadiusLG": 9,
             "colorIcon": "rgba(0,0,0,0.85)"
         },
         "Progress": {

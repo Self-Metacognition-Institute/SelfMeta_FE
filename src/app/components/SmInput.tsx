@@ -33,12 +33,9 @@ const SmInput: React.FC<IInputProps> = ({
     disabled = false,
     type,
     value = "",
-    inputClass = ""
+    inputClass = "",
+    onChange= () => {}
 }) => {
-    const [_value, setValue] = useState(value)
-    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value)
-    }
     return(
         <div className={`input-wrapper flex flex-col gap-2 ${fullWidth ? 'w-full' : ''}`}>
             <label className={labelClass} htmlFor={inputName}>
@@ -52,8 +49,8 @@ const SmInput: React.FC<IInputProps> = ({
                         : suffix
                 }
                 size={size}
-                value={_value}
-                onChange={handleOnChange}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
                 id={inputName}
                 placeholder={placeholder}
                 disabled={disabled}

@@ -13,6 +13,8 @@ export interface IPasswordInputProps extends InputProps {
     labelClass: string;
     disabled?: boolean;
     inputClass?: string;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const SmPasswordInput: React.FC<IPasswordInputProps> = ({
@@ -23,8 +25,10 @@ const SmPasswordInput: React.FC<IPasswordInputProps> = ({
     labelClass = "",
     size = "small",
     prefix,
+    value = "",
     disabled = false,
-    inputClass = ""
+    inputClass = "",
+    onChange = () => {}
 }) => {
     const [status, setStatus] = useState("password")
     return(
@@ -40,10 +44,12 @@ const SmPasswordInput: React.FC<IPasswordInputProps> = ({
                         : <EyeInvisibleOutlined onClick={() => {setStatus("password")}} />
                 }
                 size={size}
+                value={value}
                 id={inputName}
                 placeholder={placeholder}
                 disabled={disabled}
                 type={status}
+                onChange={(e) => onChange(e.target.value)}
                 className={inputClass}
             />
         </div>
