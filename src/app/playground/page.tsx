@@ -24,6 +24,19 @@ const page = () => {
               }
           },
           {
+              fieldKey: "name test",
+              renderComponent: SmInput,
+              componentProps: {
+                  labelClass:"text-sm text-red-500 font-semibold",
+                  inputName:"test" ,
+                  label:"Name test",
+                  placeholder:"Name test",
+                  fullWidth:true,
+                  value: "",
+                  size: "large",
+              }
+          },
+          {
               fieldKey: "surname",
               renderComponent: SmInput,
               componentProps: {
