@@ -17,6 +17,7 @@ export interface IInputProps extends InputProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string
     inputClass?: string;
+    hasLabel: boolean;
 }
 
 const SmInput: React.FC<IInputProps> = ({
@@ -34,13 +35,17 @@ const SmInput: React.FC<IInputProps> = ({
     type,
     value = "",
     inputClass = "",
-    onChange= () => {}
+    onChange= () => {},
+    hasLabel = true
 }) => {
     return(
         <div className={`input-wrapper flex flex-col gap-2 ${fullWidth ? 'w-full' : ''}`}>
-            <label className={labelClass} htmlFor={inputName}>
-                {label}
-            </label>
+            {
+                hasLabel &&
+                    <label className={labelClass} htmlFor={inputName}>
+                        {label}
+                    </label>
+            }
             <Input
                 prefix={prefix}
                 suffix={

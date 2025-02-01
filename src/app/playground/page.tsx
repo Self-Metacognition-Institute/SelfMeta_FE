@@ -291,7 +291,7 @@ const page = () => {
           <SmOTPInput size={"large"} time={5}/>
           {/*--------------------------OTP END----------------------*/}
           {/*  TAB COMPONENT START  */}
-          <SmGeneralTab  tabs={tabs}/>
+          <SmGeneralTab hasSearch={true} tabs={tabs}/>
           {/*  TAB COMPONENT END  */}
       </div>
   )
