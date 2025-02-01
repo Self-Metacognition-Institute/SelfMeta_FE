@@ -54,7 +54,7 @@ const page = () => {
         }
     ]
     return(
-        <div className={"bg-white shadow-general px-7.5 py-6"}>
+        <div>
             {/*  TAB COMPONENT START  */}
             <SmGeneralTab tabs={tabs}/>
             {/*  TAB COMPONENT END  */}
