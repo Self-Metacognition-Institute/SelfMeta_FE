@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, {ReactNode} from 'react'
 import SmButton from '../components/SmButton'
 import SmInput from "@/app/components/SmInput";
 import {InfoOutlined, UserOutlined} from "@ant-design/icons";
@@ -83,6 +83,8 @@ const page = () => {
       console.log(e, "from parent")
   }
 
+  const tab1:ReactNode = <div className={"w-full h-screen flex justify-center items-center"}>Tab 2 content test fucuk test test test</div>
+
   const tabs: Array<ITab> = [
       {
           title: 'Test tab 1',
@@ -92,7 +94,7 @@ const page = () => {
       {
           title: 'Test tab 2',
           tabId: 1,
-          content: <div className={'w-full h-screen flex justify-center items-center'}>Tab 2 content test test test test testtir 2</div>
+          content: tab1
       }
   ]
     return (
