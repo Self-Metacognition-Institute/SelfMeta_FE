@@ -26,7 +26,9 @@ export default function RootLayout({
             <ConfigProvider theme={theme}>
                 <body className={archivo.className + " w-full antialiased"}>
                     <main className="size-full">
-                        {children}
+                        <div className={"bg-white shadow-general px-7.5 py-6"}>
+                            {children}
+                        </div>
                     </main>
                 </body>
             </ConfigProvider>
