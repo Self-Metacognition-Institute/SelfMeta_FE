@@ -7,6 +7,7 @@ import SmPasswordInput from "@/app/components/SmPasswordInput";
 import SmCheckbox from "@/app/components/SmCheckbox";
 import DynamicForm from "@/app/components/DynamicForm";
 import SmOTPInput from "@/app/components/SmOTPInput";
+import SmGeneralTab, {ITab} from "@/app/components/SmGeneralTab";
 const page = () => {
   const formState: unknown = {
       fields: [
@@ -81,6 +82,19 @@ const page = () => {
   const handleSubmit = (e: Record<string, string>) => {
       console.log(e, "from parent")
   }
+
+  const tabs: Array<ITab> = [
+      {
+          title: 'Test tab 1',
+          tabId: 0,
+          content: <div className={'w-full h-screen flex justify-center items-center'}>Tab 1 content test test test test</div>
+      },
+      {
+          title: 'Test tab 2',
+          tabId: 1,
+          content: <div className={'w-full h-screen flex justify-center items-center'}>Tab 2 content test test test test testtir 2</div>
+      }
+  ]
     return (
       <div className='flex flex-col items-center p-10'>
           <div className='w-full h-[2px] bg-slate-500 my-10'/>
@@ -276,6 +290,9 @@ const page = () => {
           {/*--------------------------OTP START----------------------*/}
           <SmOTPInput size={"large"} time={5}/>
           {/*--------------------------OTP END----------------------*/}
+          {/*  TAB COMPONENT START  */}
+          <SmGeneralTab  tabs={tabs}/>
+          {/*  TAB COMPONENT END  */}
       </div>
   )
 }
