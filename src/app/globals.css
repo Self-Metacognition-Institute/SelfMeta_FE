@@ -24,3 +24,21 @@
         text-wrap: balance;
     }
 }
+
+.text-editor {
+    @apply flex flex-col gap-6 sm:gap-4;
+
+    & h1 { @apply text-h1; }
+    & h2 { @apply text-h2; }
+    & h3 { @apply text-h3; }
+    & h4 { @apply text-h4; }
+    & h5 { @apply text-h5; }
+
+    & :is(h1, h2, h3, h4, h5, h6) {
+        @apply font-bold tracking-[-0.16px] text-black/85
+    }
+
+    & :is(p, ul li, table) {
+        @apply text-regular text-gray-8;
+    }
+}

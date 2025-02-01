@@ -9,7 +9,8 @@ const theme: ThemeConfig = {
     },
     "components": {
         "Button": {
-            "fontWeight": 500
+            "fontWeight": 500,
+            "colorPrimary": "#3896bd"
         },
         "Typography": {
             "fontFamilyCode": "'__Archivo_565873', '__Archivo_Fallback_565873', 'Montserrat', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'",
