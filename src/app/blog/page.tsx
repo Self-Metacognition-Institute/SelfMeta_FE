@@ -10,8 +10,8 @@ const page = () => {
         console.log(page)
     }
     const firstTabContent:ReactNode =
-        <div className={'flex flex-col gap-10'}>
-            <div className={"w-full grid grid-cols-4 gap-x-6 gap-y-10 py-10"}>
+        <div className={'flex flex-col gap-10 md:gap-6'}>
+            <div className={"w-full grid grid-cols-4 gap-x-6 gap-y-10 py-10 md:grid-cols-3 md:py-6 sm:grid-cols-2 xs:grid-cols-1 xs:gap-5"}>
                 <BlogCard image={"/images/image-1.jpg"}
                           title="Rehabilitasyonda Aktivite ve Ödev Takibinin Faydaları: Verimli Tedavi Süreçleri"
                           description="Aktivite ve ödev takibi, terapistlerin tedavi süreçlerini daha sistematik ve verimli hale getirmelerine yardımcı olur. Bu yazıda, aktivite takip sistemlerinin terapistlere sunduğu faydaları detaylandırıyoruz."
@@ -56,7 +56,7 @@ const page = () => {
     return(
         <div>
             {/*  TAB COMPONENT START  */}
-            <SmGeneralTab tabs={tabs}/>
+            <SmGeneralTab tabs={tabs} hasSearch={true}/>
             {/*  TAB COMPONENT END  */}
         </div>
     )

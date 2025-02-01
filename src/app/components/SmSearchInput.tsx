@@ -22,6 +22,7 @@ const SmSearchInput:React.FC<ISearchInput> = (
                 placeholder={placeholder}
                 labelClass={''}
                 hasLabel={false}
+                fullWidth={true}
                 suffix={
                     <div className={'border-l border-l-gray-200 flex items-center justify-center py-2 pl-2'}>
                         <SearchOutlined className={'text-lg text-gray-200'}/>
