@@ -8,6 +8,7 @@ import SmCheckbox from "@/app/components/SmCheckbox";
 import DynamicForm from "@/app/components/DynamicForm";
 import SmOTPInput from "@/app/components/SmOTPInput";
 import SmGeneralTab, {ITab} from "@/app/components/SmGeneralTab";
+import SmPagination from "@/app/components/SmPagination";
 const page = () => {
   const formState: unknown = {
       fields: [
@@ -97,6 +98,9 @@ const page = () => {
           content: tab1
       }
   ]
+    const handlePageChange = (page: number) => {
+        console.log(page)
+    }
     return (
       <div className='flex flex-col items-center p-10'>
           <div className='w-full h-[2px] bg-slate-500 my-10'/>
@@ -295,6 +299,9 @@ const page = () => {
           {/*  TAB COMPONENT START  */}
           <SmGeneralTab hasSearch={true} tabs={tabs}/>
           {/*  TAB COMPONENT END  */}
+          {/*  PAGINATION START */}
+          <SmPagination defaultCurrent={1} pageSize={10} total={100} onChange={handlePageChange}/>
+          {/*  PAGINATION END */}
       </div>
   )
 }
