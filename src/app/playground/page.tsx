@@ -9,6 +9,7 @@ import DynamicForm from "@/app/components/DynamicForm";
 import SmOTPInput from "@/app/components/SmOTPInput";
 import SmGeneralTab, {ITab} from "@/app/components/SmGeneralTab";
 import SmPagination from "@/app/components/SmPagination";
+import SmCalendar from "@/app/components/SmCalendar";
 const page = () => {
   const formState: unknown = {
       fields: [
@@ -302,6 +303,9 @@ const page = () => {
           {/*  PAGINATION START */}
           <SmPagination defaultCurrent={1} pageSize={10} total={100} onChange={handlePageChange}/>
           {/*  PAGINATION END */}
+          {/* CALENDAR START */}
+          <SmCalendar />
+          {/* CALENDAR END */}
       </div>
   )
 }
