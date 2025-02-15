@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "@/app/components/SideBar";
 import "../globals.css";
 export const metadata = {
   title: 'Next.js',
@@ -12,10 +13,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="w-[1024px] mx-auto">
-          {children}
-        </div>
+      <body className="group/body">
+        <main className="w-full">
+            <div className="grid grid-cols-[1.5fr_3fr] group-[&.sidebar-collapsed]/body:grid-cols-[100px_3.5fr]">
+                <SideBar />
+                <div>
+                    <div className="w-[1024px] mx-auto">
+                      {children}
+                    </div>
+                </div>
+            </div>
+        </main>
       </body>
     </html>
   )
