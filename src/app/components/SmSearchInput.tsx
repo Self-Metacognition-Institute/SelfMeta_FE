@@ -17,7 +17,7 @@ const SmSearchInput:React.FC<ISearchInput> = (
         <>
             <SmInput
                 inputName={`search-${id}`}
-                inputClass={'rounded-[9px]'}
+                inputClass={'rounded-main'}
                 label={''}
                 placeholder={placeholder}
                 labelClass={''}

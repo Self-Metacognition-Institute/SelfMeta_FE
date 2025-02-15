@@ -25,7 +25,7 @@ const config: Config = {
             'xs': {max: "480px"},
             '2xs': {max: "375px"},
         },
-        opacity: generateOpacityRange(1, 100),
+        opacity: generateOpacityRange(0, 100),
         zIndex: generateZIndexRange(1, 100),
         transitionDuration: generateTransitionDurationRange(100, 1000),
         transitionDelay: generateDelayRange(100, 1000),
@@ -65,6 +65,9 @@ const config: Config = {
                 h4: ['20px', '28px'],
                 h5: ['16px', '24px'],
                 regular: ['14px', '22px']
+            },
+            borderRadius: {
+                main: "9px"
             },
             colors: {
                 red: {

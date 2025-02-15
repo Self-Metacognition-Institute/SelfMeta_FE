@@ -25,7 +25,10 @@ const archivo = Archivo({
     preload: true
 });
 
-const SideBar: React.FC = () => {
+export interface ISideBarProps {
+    className?: string;
+}
+const SideBar: React.FC<ISideBarProps> = ({ className }) => {
     const [collapsed, setCollapsed] = useState(false);
 
     // localStorage'dan collapsed durumunu okuyalım
@@ -55,7 +58,7 @@ const SideBar: React.FC = () => {
 
     return (
         // ${collapsed ? "w-20" : "w-64"}
-        <div className={`${archivo.className} group/sidebar sidebar bg-white px-6 py-6`}>
+        <div className={`${archivo.className} group/sidebar sidebar bg-white px-6 py-6 ${className}`}>
             <div className="sticky top-6">
                 <div className={"flex items-center " + (collapsed ? 'justify-center' : 'justify-between pb-3')}>
                     <Image
@@ -82,7 +85,7 @@ const SideBar: React.FC = () => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <DotChartOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -91,7 +94,7 @@ const SideBar: React.FC = () => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <FileOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -112,7 +115,7 @@ const SideBar: React.FC = () => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <ProfileOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -121,7 +124,7 @@ const SideBar: React.FC = () => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <FileSearchOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -142,7 +145,7 @@ const SideBar: React.FC = () => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <DashboardOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -163,7 +166,7 @@ const SideBar: React.FC = () => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <UnorderedListOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -184,7 +187,7 @@ const SideBar: React.FC = () => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <TeamOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -193,7 +196,7 @@ const SideBar: React.FC = () => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <FileTextOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -202,7 +205,7 @@ const SideBar: React.FC = () => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <PlusOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -211,7 +214,7 @@ const SideBar: React.FC = () => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <StockOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
