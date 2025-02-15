@@ -1,11 +1,12 @@
+'use client'
 import React from 'react';
 import type { BadgeProps, CalendarProps } from 'antd';
 import { Badge, Calendar } from 'antd';
 import type { Dayjs } from 'dayjs';
 
-const getListData = (value: Dayjs) => {
+const getListData = (value: Dayjs, eventData: Array<IEvent>) => {
     let listData: { type: string; content: string }[] = [];
-    console.log(value.date())
+    console.log(value.month())
     switch (value.date()) {
         case 8:
             listData = [
@@ -41,7 +42,21 @@ const getMonthData = (value: Dayjs) => {
     }
 };
 
-const SmCalendar: React.FC = () => {
+interface IEvent {
+    content: string;
+    eventDate: string | Dayjs;
+    type: 'warning' | 'success' | 'error';
+}
+
+export interface ICalendarProps {
+    eventData?: Array<IEvent>;
+}
+
+const SmCalendar: React.FC<ICalendarProps> = (
+    {
+        eventData,
+    }
+) => {
     const monthCellRender = (value: Dayjs) => {
         const num = getMonthData(value);
         return num ? (
@@ -53,7 +68,7 @@ const SmCalendar: React.FC = () => {
     };
 
     const dateCellRender = (value: Dayjs) => {
-        const listData = getListData(value);
+        const listData = getListData(value, eventData);
         return (
             <ul className="events">
                 {listData.map((item) => (
