@@ -1,12 +1,9 @@
 'use client'
 import React from "react";
-import "../globals.css";
+import "./globals.css";
 import theme from "@/themes/themeConfig";
-import Image from "next/image";
-import {QuestionOutlined} from "@ant-design/icons";
 import { Archivo } from "next/font/google";
-import {ConfigProvider, Typography} from 'antd';
-const { Text, Link } = Typography;
+import {ConfigProvider} from 'antd';
 
 const archivo = Archivo({
     subsets: ['latin'],
@@ -17,21 +14,21 @@ const archivo = Archivo({
 })
 
 export default function RootLayout({
-   children,
-   }: {
+                                       children,
+                                   }: {
     children: React.ReactNode
 }) {
     return (
         <html lang="en">
-            <ConfigProvider theme={theme}>
-                <body className={archivo.className + " w-full antialiased"}>
+            <body className={archivo.className + " w-full antialiased"}>
+                <ConfigProvider theme={theme}>
                     <main className="size-full">
                         <div className={"bg-white shadow-general px-7.5 py-6 md:px-4"}>
                             {children}
                         </div>
                     </main>
-                </body>
-            </ConfigProvider>
+                </ConfigProvider>
+            </body>
         </html>
     )
 }
