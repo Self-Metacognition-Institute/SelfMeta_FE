@@ -25,7 +25,10 @@ const archivo = Archivo({
     preload: true
 });
 
-const SideBar: React.FC = () => {
+export interface ISideBarProps {
+    className?: string;
+}
+const SideBar: React.FC<ISideBarProps> = ({ className }) => {
     const [collapsed, setCollapsed] = useState(false);
 
     // localStorage'dan collapsed durumunu okuyalım
@@ -55,7 +58,7 @@ const SideBar: React.FC = () => {
 
     return (
         // ${collapsed ? "w-20" : "w-64"}
-        <div className={`${archivo.className} group/sidebar sidebar bg-white px-6 py-6`}>
+        <div className={`${archivo.className} group/sidebar sidebar bg-white px-6 py-6 ${className}`}>
             <div className="sticky top-6">
                 <div className={"flex items-center " + (collapsed ? 'justify-center' : 'justify-between pb-3')}>
                     <Image

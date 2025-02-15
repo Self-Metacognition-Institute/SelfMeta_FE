@@ -54,11 +54,11 @@ const page = () => {
         }
     ]
     return(
-        <div>
+        <>
             {/*  TAB COMPONENT START  */}
             <SmGeneralTab tabs={tabs} hasSearch={true}/>
             {/*  TAB COMPONENT END  */}
-        </div>
+        </>
     )
 }
 
