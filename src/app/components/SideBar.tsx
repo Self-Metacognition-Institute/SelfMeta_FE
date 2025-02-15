@@ -85,7 +85,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <DotChartOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -94,7 +94,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <FileOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -115,7 +115,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <ProfileOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -124,7 +124,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <FileSearchOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -145,7 +145,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <DashboardOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -166,7 +166,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <UnorderedListOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -187,7 +187,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                         <ul className={"flex flex-col gap-2.5 " + (collapsed ? 'items-center' : '') }>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <TeamOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -196,7 +196,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <FileTextOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -205,7 +205,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <PlusOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
@@ -214,7 +214,7 @@ const SideBar: React.FC<ISideBarProps> = ({ className }) => {
                             </Link>
                             <Link
                                 href="/"
-                                className="flex items-center gap-3 px-3 py-2 rounded-[9px] duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
+                                className="flex items-center gap-3 px-3 py-2 rounded-main duration-300 hover:bg-gray-3 [&.active]:bg-gray-4"
                             >
                                 <StockOutlined style={{ color: "#262626", fontSize: "16px" }} />
                                 <span className={`${collapsed ? "hidden" : "block"} text-regular font-medium text-gray-10`}>
